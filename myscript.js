@@ -62,6 +62,7 @@ playerManager.add(new Player("DjokerNole", "ノバク・ジョコビッチ", ["N
 playerManager.add(new Player("xxx_nadal", "ラファエル・ナダル", ["Rafael", "Nadal"]));
 playerManager.add(new Player("AndreAgassi", "アンドレ・アガシ", ["Andre", "Agassi"]));
 playerManager.add(new Player("CaroWozniacki", "キャロライン・ウォズニアッキ", ["Caroline", "Wozniacki"]));
+playerManager.add(new Player("AnaIvanovic", "アナ・イバノビッチ", ["Ana", "Ivanovic"]));
 
 var __REPLACE_WITH_ACTING_PLAYERS__ = "__REPLACE_WITH_ACTING_PLAYERS__";
 

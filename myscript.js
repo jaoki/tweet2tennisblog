@@ -13,27 +13,53 @@ Player.prototype.getBlogUrl = function(){
 
 function PlayerManager(){
   this.players = {};
+  this.words = {};
 }
 
 PlayerManager.prototype.add = function(player){
-  this.players[player.twitterId.toLowerCase()] = player;
+  this.players[player.twitterId] = player;
+
+  // Add the player by twitter ID
+  if(this.words[player.twitterId] == undefined){
+    this.words[player.twitterId] = [];
+  }
+  this.words[player.twitterId].push(player);
+
+  // Add the player by synonyms
+  for(var i = 0; i < player.synonyms.length; i++){
+    if(this.words[player.synonyms[i]] == undefined){
+      this.words[player.synonyms[i]] = [];
+    }
+    this.words[player.synonyms[i]].push(player);
+  }
+
 }
 
-PlayerManager.prototype.get = function(twitterId){
-  return this.players[twitterId.toLowerCase()];
+// PlayerManager.prototype.get = function(twitterId){
+  // return this.players[twitterId.toLowerCase()];
+// }
+
+// PlayerManager.prototype.exists = function(twitterId){
+  // return twitterId.toLowerCase() in this.players;
+// }
+
+PlayerManager.prototype.getPlayersByWord = function(word){
+  return this.words[word.toLowerCase()];
 }
 
-PlayerManager.prototype.exists = function(twitterId){
-  return twitterId.toLowerCase() in this.players;
+PlayerManager.prototype.existByWord = function(word){
+  return word.toLowerCase() in this.words;
 }
 
 playerManager = new PlayerManager();
 
-playerManager.add(new Player("MariaSharapova", "マリア・シャラポワ"));
-playerManager.add(new Player("lleytonhewitt", "レイトン・ヒューイット"));
-playerManager.add(new Player("NickKyrgios", "ニック・キリオス"));
-playerManager.add(new Player("usopen", "USオープン"));
-playerManager.add(new Player("rogerfederer", "ロジャー・フェデラー"));
+playerManager.add(new Player("MariaSharapova", "マリア・シャラポワ", []));
+playerManager.add(new Player("lleytonhewitt", "レイトン・ヒューイット", []));
+playerManager.add(new Player("NickKyrgios", "ニック・キリオス", []));
+playerManager.add(new Player("usopen", "USオープン", []));
+playerManager.add(new Player("rogerfederer", "ロジャー・フェデラー", ["Roger", "Federer"]));
+playerManager.add(new Player("DjokerNole", "ノバク・ジョコビッチ", ["Novak", "Djokovic"]));
+playerManager.add(new Player("xxx_nadal", "ラファエル・ナダル", ["Rafael", "Nadal"]));
 
 var __REPLACE_WITH_ACTING_PLAYERS__ = "__REPLACE_WITH_ACTING_PLAYERS__";
 
@@ -53,6 +79,9 @@ __REPLACE_WITH_ACTING_PLAYERS__ + "\n" +
 "(adsbygoogle = window.adsbygoogle || []).push({});\n" +
 "</script>\n";
 
+/**
+* Find @xxx in tweets
+*/
 function findTwitterIdsFromContext(){
   ids = [];
   links = document.querySelector("p.tweet-text").querySelectorAll("a.pretty-link");
@@ -62,6 +91,20 @@ function findTwitterIdsFromContext(){
     ids.push(plainid);
   }
   return ids;
+}
+
+function findWordsFromContext(){
+  // document.querySelector("p.TweetTextSize").textContent.split(" ");
+  _words = document.querySelector("p.TweetTextSize").textContent.match(/\w+/g);
+  console.log(_words);
+  var words = [];
+  for(var i = 0; i < _words.length; i++){
+    if(_words[i].length >= 3){
+      words.push(_words[i].toLowerCase());
+    }
+  }
+  return words;
+
 }
 
 function backup_findTwitterIdsFromContext(text){
@@ -97,17 +140,17 @@ function processEmbedTweet(){
   // Collect all twitter IDs.
   var actingPlayers = [];
   var twitterId = getTwitterID();
-  if(playerManager.exists(twitterId)){
-    actingPlayers.push(playerManager.get(twitterId));
-    // console.log(playerManager.get(twitterId).japanese);
-  // }else{
-    // console.log(twitterId + " does not exist");
+  if(playerManager.existByWord(twitterId)){
+    actingPlayers = actingPlayers.concat(playerManager.getPlayersByWord(twitterId));
+//    for(var i = 0; i < players.length; i++){
+ //     actingPlayers.push(players[i]);
+  //  }
   }
   
-  ids = findTwitterIdsFromContext();
-  for(var i = 0; i < ids.length; i++){
-    if(playerManager.exists(ids[i])){
-      actingPlayers.push(playerManager.get(ids[i]));
+  words = findWordsFromContext();
+  for(var i = 0; i < words.length; i++){
+    if(playerManager.existByWord(words[i])){
+      actingPlayers = actingPlayers.concat(playerManager.getPlayersByWord(words[i]));
     }
   }
 

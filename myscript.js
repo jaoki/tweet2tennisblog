@@ -55,7 +55,7 @@ playerManager = new PlayerManager();
 
 playerManager.add(new Player("MariaSharapova", "マリア・シャラポワ", []));
 playerManager.add(new Player("lleytonhewitt", "レイトン・ヒューイット", []));
-playerManager.add(new Player("NickKyrgios", "ニック・キリオス", []));
+playerManager.add(new Player("NickKyrgios", "ニック・キリオス", ["Nick", "Kyrgios"]));
 playerManager.add(new Player("usopen", "USオープン", []));
 playerManager.add(new Player("rogerfederer", "ロジャー・フェデラー", ["Roger", "Federer"]));
 playerManager.add(new Player("DjokerNole", "ノバク・ジョコビッチ", ["Novak", "Djokovic"]));
@@ -63,6 +63,8 @@ playerManager.add(new Player("xxx_nadal", "ラファエル・ナダル", ["Rafae
 playerManager.add(new Player("AndreAgassi", "アンドレ・アガシ", ["Andre", "Agassi"]));
 playerManager.add(new Player("CaroWozniacki", "キャロライン・ウォズニアッキ", ["Caroline", "Wozniacki"]));
 playerManager.add(new Player("AnaIvanovic", "アナ・イバノビッチ", ["Ana", "Ivanovic"]));
+playerManager.add(new Player("AnaIvanovic", "アナ・イバノビッチ", ["Ana", "Ivanovic"]));
+playerManager.add(new Player("andy_murray", "アンディ・マレー", ["Andy", "Murray"]));
 
 var __REPLACE_WITH_ACTING_PLAYERS__ = "__REPLACE_WITH_ACTING_PLAYERS__";
 

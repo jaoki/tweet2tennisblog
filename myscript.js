@@ -65,6 +65,8 @@ playerManager.add(new Player("CaroWozniacki", "キャロライン・ウォズニ
 playerManager.add(new Player("AnaIvanovic", "アナ・イバノビッチ", ["Ana", "Ivanovic"]));
 playerManager.add(new Player("AnaIvanovic", "アナ・イバノビッチ", ["Ana", "Ivanovic"]));
 playerManager.add(new Player("andy_murray", "アンディ・マレー", ["Andy", "Murray"]));
+playerManager.add(new Player("JohnIsner", "ジョン・イズナー", ["John", "Isner"]));
+playerManager.add(new Player("MonicaAce93", "ジョン・イズナー", ["Monica", "Puig"]));
 
 var __REPLACE_WITH_ACTING_PLAYERS__ = "__REPLACE_WITH_ACTING_PLAYERS__";
 

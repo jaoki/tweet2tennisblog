@@ -143,29 +143,38 @@ function processEmbedTweet(){
   parentOfTextarea.appendChild(newTextarea);
 
   // Collect all twitter IDs.
-  var actingPlayers = [];
+  var actingPlayerList = [];
   var twitterId = getTwitterID();
   if(playerManager.existByWord(twitterId)){
-    actingPlayers = actingPlayers.concat(playerManager.getPlayersByWord(twitterId));
+    actingPlayerList = actingPlayerList.concat(playerManager.getPlayersByWord(twitterId));
 //    for(var i = 0; i < players.length; i++){
- //     actingPlayers.push(players[i]);
+ //     actingPlayerList.push(players[i]);
   //  }
   }
   
   words = findWordsFromContext();
   for(var i = 0; i < words.length; i++){
     if(playerManager.existByWord(words[i])){
-      actingPlayers = actingPlayers.concat(playerManager.getPlayersByWord(words[i]));
+      actingPlayerList = actingPlayerList.concat(playerManager.getPlayersByWord(words[i]));
     }
+  }
+
+  var uniqueActingPlayers = {};
+  for(var i = 0; i < actingPlayerList.length; i++){
+    uniqueActingPlayers[actingPlayerList[i].twitterId] = actingPlayerList[i]
   }
 
   var embedTweet = embedTweetTextarea.value;
 
   var htmlNames = "";
   var labelString = "";
-  for(var i = 0; i < actingPlayers.length; i++){
-    htmlNames += htmlName = "<a href=" + actingPlayers[i].getBlogUrl() + ">" + actingPlayers[i].japanese + "</a><br/>\n";
-    labelString += actingPlayers[i].japanese + ",";
+  // for(var i = 0; i < actingPlayers.length; i++){
+    // htmlNames += htmlName = "<a href=" + actingPlayers[i].getBlogUrl() + ">" + actingPlayers[i].japanese + "</a><br/>\n";
+    // labelString += actingPlayers[i].japanese + ",";
+  // }
+  for(var id in uniqueActingPlayers){
+    htmlNames += htmlName = "<a href=" + uniqueActingPlayers[id].getBlogUrl() + ">" + uniqueActingPlayers[id].japanese + "</a><br/>\n";
+    labelString += uniqueActingPlayers[id].japanese + ",";
   }
   var processedTemplate = TEMPLATE.replace(__REPLACE_WITH_ACTING_PLAYERS__, htmlNames);
 

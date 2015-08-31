@@ -69,6 +69,7 @@ playerManager.add(new Player("JohnIsner", "ジョン・イズナー", ["John", "
 playerManager.add(new Player("MonicaAce93", "モニカ・プイグ", ["Monica", "Puig"]));
 playerManager.add(new Player("geniebouchard", "ジニー・ブシャール", ["Genie", "Bouchard"]));
 playerManager.add(new Player("JimmyConnors", "ジミー・コナーズ", ["Jimmy", "Connors"]));
+playerManager.add(new Player("luciesafarova", "ルーシー・サファロバ", ["Lucie", "Safarova"]));
 
 var __REPLACE_WITH_ACTING_PLAYERS__ = "__REPLACE_WITH_ACTING_PLAYERS__";
 

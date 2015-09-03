@@ -11,10 +11,16 @@
     "scripts": ["background.js"],
     "persistent": true
   },
-  "content_scripts": [{
-    "matches": ["*://*/*"],
-    "js": ["myscript.js"]
-  }],
+  "content_scripts": [
+  {
+    "matches": ["https://twitter.com/*/status/*"],
+    "js": ["twitter_content.js"]
+  },
+  {
+    "matches": ["https://www.blogger.com/blogger.g*"],
+    "js": ["blogger_content.js"]
+  }
+  ],
   "browser_action": {
     "default_title": "tweet2blog"
   },

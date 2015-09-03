@@ -71,6 +71,7 @@ playerManager.add(new Player("geniebouchard", "ジニー・ブシャール", ["G
 playerManager.add(new Player("JimmyConnors", "ジミー・コナーズ", ["Jimmy", "Connors"]));
 playerManager.add(new Player("luciesafarova", "ルーシー・サファロバ", ["Lucie", "Safarova"]));
 playerManager.add(new Player("bgtennisnation", "ブラッド・ギルバート", ["Brad", "Gilbert"]));
+playerManager.add(new Player("CoCoVandey", "ココ・バンダウェイ", ["Coco", "Vandeweghe"]));
 
 var __REPLACE_WITH_ACTING_PLAYERS__ = "__REPLACE_WITH_ACTING_PLAYERS__";
 

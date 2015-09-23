@@ -79,6 +79,9 @@ playerManager.add(new Player("TKokkinakis", "タナシ・コキナキス", ["Tha
 playerManager.add(new Player("outside_theball", "メイリーン・ラミー", ["Mayleen", "Ramey"]));
 playerManager.add(new Player("serenawilliams", "セリーナ・ウィリアムズ", ["Serena", "Williams"]));
 playerManager.add(new Player("ElinaSvitolina", "エリナ・スビトリーナ", ["Elina", "Svitolina"]));
+playerManager.add(new Player("BelindaBencic", "ベリンダ・ベンチッチ", ["Belinda", "Bencic"]));
+playerManager.add(new Player("sabinelisicki", "ザビーネ・リシキ", ["sabine", "lisicki"]));
+playerManager.add(new Player("ARadwanska", "アグニエシュカ・ラドワンスカ", ["Agnieszka", "Aga", "Radwanska"]));
 
 var __REPLACE_WITH_ACTING_PLAYERS__ = "__REPLACE_WITH_ACTING_PLAYERS__";
 

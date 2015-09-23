@@ -18,6 +18,7 @@ function openLabels(e){
     document.querySelector("a.PXLWASD-Qb-a").click();
     event.preventDefault(); 
   }
+
 }
 
 function waitUntilLoaded(callback){

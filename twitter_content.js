@@ -73,14 +73,21 @@ playerManager.add(new Player("luciesafarova", "ルーシー・サファロバ", 
 playerManager.add(new Player("bgtennisnation", "ブラッド・ギルバート", ["Brad", "Gilbert"]));
 playerManager.add(new Player("CoCoVandey", "ココ・バンダウェイ", ["Coco", "Vandeweghe"]));
 playerManager.add(new Player("richardgasquet1", "リシャール・ガスケ", ["Richard", "Gasquet"]));
+playerManager.add(new Player("flavia_pennetta", "フラビア・ペンネッタ", ["Flavia", "Pennetta"]));
+playerManager.add(new Player("xxxx", "ロベルタ・ビンチ", ["Roberta", "Vinci"]));
+playerManager.add(new Player("TKokkinakis", "タナシ・コキナキス", ["Thanasi", "Kokkinakis"]));
+playerManager.add(new Player("outside_theball", "メイリーン・ラミー", ["Mayleen", "Ramey"]));
+playerManager.add(new Player("serenawilliams", "セリーナ・ウィリアムズ", ["Serena", "Williams"]));
+playerManager.add(new Player("ElinaSvitolina", "エリナ・スビトリーナ", ["Elina", "Svitolina"]));
 
 var __REPLACE_WITH_ACTING_PLAYERS__ = "__REPLACE_WITH_ACTING_PLAYERS__";
 
 var TEMPLATE = "<br />\n" +
 "<div class=\"tennis-scrap comment\">\n" +
+"content\n" + 
 __REPLACE_WITH_ACTING_PLAYERS__ + "\n" +
 "<div class=\"tennis-scrap quote\">\n" +
-"__quote__ </div>\n" +
+"__quote__ \n</div>\n" +
 "__description__\n" +
 "</div>\n" +
 "<br />\n" +
@@ -181,7 +188,7 @@ function processEmbedTweet(){
     // labelString += actingPlayers[i].japanese + ",";
   // }
   for(var id in uniqueActingPlayers){
-    htmlNames += htmlName = "<a href=" + uniqueActingPlayers[id].getBlogUrl() + ">" + uniqueActingPlayers[id].japanese + "</a><br/>\n";
+    htmlNames += htmlName = "<a target='_blank' href=" + uniqueActingPlayers[id].getBlogUrl() + ">" + uniqueActingPlayers[id].japanese + "</a><br/>\n";
     labelString += uniqueActingPlayers[id].japanese + ",";
   }
   var processedTemplate = TEMPLATE.replace(__REPLACE_WITH_ACTING_PLAYERS__, htmlNames);

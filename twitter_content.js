@@ -12,12 +12,12 @@ Player.prototype.getBlogUrl = function(){
 }
 
 function PlayerManager(){
-  this.players = {};
+//  this.players = {};
   this.words = {};
 }
 
 PlayerManager.prototype.add = function(player){
-  this.players[player.twitterId] = player;
+//  this.players[player.twitterId] = player;
 
   // Add the player by twitter ID
   if(this.words[player.twitterId] == undefined){
@@ -35,16 +35,30 @@ PlayerManager.prototype.add = function(player){
 
 }
 
-// PlayerManager.prototype.get = function(twitterId){
-  // return this.players[twitterId.toLowerCase()];
-// }
-
-// PlayerManager.prototype.exists = function(twitterId){
-  // return twitterId.toLowerCase() in this.players;
-// }
-
 PlayerManager.prototype.getPlayersByWord = function(word){
   return this.words[word.toLowerCase()];
+}
+
+PlayerManager.prototype.getPlayersByWordMatch = function(word){
+
+  // get all and duplicate players starts with the word
+  var matched_players = [];
+  var keys = Object.keys(this.words)
+  for(var i = 0; i < keys.length; i++){
+    if(keys[i].startsWith(word)){
+      matched_players = matched_players.concat(this.words[keys[i]]);
+    }
+  }
+
+  // filter duplicate
+  var result = []
+  for(var i = 0; i < matched_players.length; i++){
+    if (result.indexOf(matched_players[i]) == -1){
+      result.push(matched_players[i]);
+    }
+  }
+
+  return result;
 }
 
 PlayerManager.prototype.existByWord = function(word){
@@ -82,6 +96,8 @@ playerManager.add(new Player("ElinaSvitolina", "エリナ・スビトリーナ",
 playerManager.add(new Player("BelindaBencic", "ベリンダ・ベンチッチ", ["Belinda", "Bencic"]));
 playerManager.add(new Player("sabinelisicki", "ザビーネ・リシキ", ["sabine", "lisicki"]));
 playerManager.add(new Player("ARadwanska", "アグニエシュカ・ラドワンスカ", ["Agnieszka", "Aga", "Radwanska"]));
+playerManager.add(new Player("KikiMladenovic", "クリスティーナ・ムラデノビッチ", ["Kiki", "Mladenovic", "kristina"]));
+playerManager.add(new Player("JackSock", "ジャック・ソック", ["Jack", "Sock"]));
 
 var __REPLACE_WITH_ACTING_PLAYERS__ = "__REPLACE_WITH_ACTING_PLAYERS__";
 
@@ -152,9 +168,29 @@ function getTwitterID(){
   return window.location.href.replace("https://twitter.com/", "").replace(/\/status\/.*/g, "")
 }
 
+function translatePlayerName(e){
+  if(this.value.length < 3) return;
+  var players = playerManager.getPlayersByWordMatch(this.value);
+  var playerNames = players.map(function(p){
+    return p.japanese;
+  });
+  var translated_player_name_text = document.querySelector("#translated_player_name_text");
+  translated_player_name_text.value = playerNames.join(",");
+}
+
 function processEmbedTweet(){
   var embedTweetTextarea = document.querySelector("textarea.embed-destination.js-initial-focus");
   var parentOfTextarea = embedTweetTextarea.parentElement;
+
+  var addtional_player_name_text = document.createElement("input");
+  addtional_player_name_text.addEventListener("keyup", translatePlayerName);
+  parentOfTextarea.appendChild(addtional_player_name_text);
+
+  var translated_player_name_text  = document.createElement("input");
+  translated_player_name_text.setAttribute("id", "translated_player_name_text");
+  parentOfTextarea.appendChild(translated_player_name_text);
+
+
   var newTextarea = document.createElement("textarea");
   newTextarea.style.height="300px";
   newTextarea.rows="30";

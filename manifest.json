@@ -14,7 +14,7 @@
   "content_scripts": [
   {
     "matches": ["https://twitter.com/*/status/*"],
-    "js": ["twitter_content.js"]
+    "js": ["twitter/player.js", "twitter/content.js"]
   },
   {
     "matches": ["https://www.blogger.com/blogger.g*"],

@@ -111,11 +111,77 @@ function translatePlayerName(e){
   });
   var translated_player_name_text = document.querySelector("#translated_player_name_text");
   translated_player_name_text.value = playerNames.join(",");
+
+  if (e.keyCode == 13) { // enter
+    playerAggregator.addPlayers(players);
+    var uniqueActingPlayers = playerAggregator.aggregateAllUniquePlayers();
+    refreshOutputHtmlTextarea(uniqueActingPlayers);
+  }
 }
 
+var SELECTOR_EMBED_TWEET_TEXTAREA = "textarea.embed-destination.js-initial-focus";
+
+function refreshOutputHtmlTextarea(uniqueActingPlayers){
+  var embedTweetTextarea = document.querySelector(SELECTOR_EMBED_TWEET_TEXTAREA);
+
+  var htmlNames = "";
+  var labelString = "";
+  for(var id in uniqueActingPlayers){
+    htmlNames += htmlName = "<a target='_blank' href=" + uniqueActingPlayers[id].getBlogUrl() + ">" + uniqueActingPlayers[id].japanese + "</a><br/>\n";
+    labelString += uniqueActingPlayers[id].japanese + ",";
+  }
+
+  var processedTemplate = TEMPLATE.replace(__REPLACE_WITH_ACTING_PLAYERS__, htmlNames);
+
+  var outputHtmlTextArea = document.querySelector("#outputHtmlTextArea");
+  outputHtmlTextArea.value = "<!-- embed tweet \n" + 
+      labelString + 
+      "\n-->\n" +
+      embedTweetTextarea.value + "\n" +
+      "<!-- embed tweet -->\n" +
+      processedTemplate;
+}
+
+function PlayerAggregator(){
+  this.additionalPlayers = [];
+}
+
+PlayerAggregator.prototype.addPlayers = function(players){
+  this.additionalPlayers = this.additionalPlayers.concat(players);
+}
+
+PlayerAggregator.prototype.aggregateAllUniquePlayers = function(){
+
+  // Collect all twitter IDs.
+  var actingPlayerList = [];
+  var twitterId = getTwitterID();
+  if(playerManager.existByWord(twitterId)){
+    actingPlayerList = actingPlayerList.concat(playerManager.getPlayersByWord(twitterId));
+  }
+
+  words = findWordsFromContext();
+  for(var i = 0; i < words.length; i++){
+    if(playerManager.existByWord(words[i])){
+      actingPlayerList = actingPlayerList.concat(playerManager.getPlayersByWord(words[i]));
+    }
+  }
+
+  actingPlayerList = actingPlayerList.concat(this.additionalPlayers);
+
+  // filter duplicate
+  var uniqueActingPlayers = {};
+  for(var i = 0; i < actingPlayerList.length; i++){
+    uniqueActingPlayers[actingPlayerList[i].twitterId] = actingPlayerList[i]
+  }
+
+  return uniqueActingPlayers;
+}
+
+var playerAggregator = new PlayerAggregator();
+
+
 function processEmbedTweet(){
-  var embedTweetTextarea = document.querySelector("textarea.embed-destination.js-initial-focus");
-  var parentOfTextarea = embedTweetTextarea.parentElement;
+  var parentOfTextarea = document.querySelector(SELECTOR_EMBED_TWEET_TEXTAREA).parentElement;
 
   var addtional_player_name_text = document.createElement("input");
   addtional_player_name_text.addEventListener("keyup", translatePlayerName);
@@ -125,58 +191,20 @@ function processEmbedTweet(){
   translated_player_name_text.setAttribute("id", "translated_player_name_text");
   parentOfTextarea.appendChild(translated_player_name_text);
 
+  var outputHtmlTextArea = document.createElement("textarea");
+  outputHtmlTextArea.setAttribute("id", "outputHtmlTextArea");
+  outputHtmlTextArea.style.height="200px";
+  outputHtmlTextArea.rows="30";
+  parentOfTextarea.appendChild(outputHtmlTextArea);
 
-  var newTextarea = document.createElement("textarea");
-  newTextarea.style.height="200px";
-  newTextarea.rows="30";
-  parentOfTextarea.appendChild(newTextarea);
+  var uniqueActingPlayers = playerAggregator.aggregateAllUniquePlayers();
 
-  // Collect all twitter IDs.
-  var actingPlayerList = [];
-  var twitterId = getTwitterID();
-  if(playerManager.existByWord(twitterId)){
-    actingPlayerList = actingPlayerList.concat(playerManager.getPlayersByWord(twitterId));
-//    for(var i = 0; i < players.length; i++){
- //     actingPlayerList.push(players[i]);
-  //  }
-  }
-  
-  words = findWordsFromContext();
-  for(var i = 0; i < words.length; i++){
-    if(playerManager.existByWord(words[i])){
-      actingPlayerList = actingPlayerList.concat(playerManager.getPlayersByWord(words[i]));
-    }
-  }
+  refreshOutputHtmlTextarea(uniqueActingPlayers);
 
-  var uniqueActingPlayers = {};
-  for(var i = 0; i < actingPlayerList.length; i++){
-    uniqueActingPlayers[actingPlayerList[i].twitterId] = actingPlayerList[i]
-  }
-
-  var embedTweet = embedTweetTextarea.value;
-
-  var htmlNames = "";
-  var labelString = "";
-  // for(var i = 0; i < actingPlayers.length; i++){
-    // htmlNames += htmlName = "<a href=" + actingPlayers[i].getBlogUrl() + ">" + actingPlayers[i].japanese + "</a><br/>\n";
-    // labelString += actingPlayers[i].japanese + ",";
-  // }
-  for(var id in uniqueActingPlayers){
-    htmlNames += htmlName = "<a target='_blank' href=" + uniqueActingPlayers[id].getBlogUrl() + ">" + uniqueActingPlayers[id].japanese + "</a><br/>\n";
-    labelString += uniqueActingPlayers[id].japanese + ",";
-  }
-  var processedTemplate = TEMPLATE.replace(__REPLACE_WITH_ACTING_PLAYERS__, htmlNames);
-
-  newTextarea.value = "<!-- embed tweet \n" + 
-      labelString + 
-      "\n-->\n" +
-      embedTweet + "\n" +
-      "<!-- embed tweet -->\n" +
-      processedTemplate;
 }
 
 function waitUntilEmbedTweetTextShowsUp(callback){
-  var embedTweetTextarea = document.querySelector("textarea.embed-destination.js-initial-focus");
+  var embedTweetTextarea = document.querySelector(SELECTOR_EMBED_TWEET_TEXTAREA);
   var embedTweet = embedTweetTextarea.value;
   
   if(embedTweet.length < 3){

@@ -33,6 +33,11 @@ playerManager.add(new Player("sabinelisicki", "ザビーネ・リシキ", ["sabi
 playerManager.add(new Player("ARadwanska", "アグニエシュカ・ラドワンスカ", ["Agnieszka", "Aga", "Radwanska"]));
 playerManager.add(new Player("KikiMladenovic", "クリスティーナ・ムラデノビッチ", ["Kiki", "Mladenovic", "kristina"]));
 playerManager.add(new Player("JackSock", "ジャック・ソック", ["Jack", "Sock"]));
+playerManager.add(new Player("CarlaSuarezNava", "カルラ・スアレス・ナバロ", ["Carla", "Suarez", "Navarro"]));
+playerManager.add(new Player("GarbiMuguruza", "ガルビネ・ムグルザ", ["Garbine", "Muguruza", "Garbiñe"]));
+playerManager.add(new Player("Simona_Halep", "シモーナ・ハレプ", ["Simona", "Halep"]));
+playerManager.add(new Player("juliagoerges", "ジュリア・ゴージェス", ["julia", "goerges"]));
+playerManager.add(new Player("xxxx", "クルム伊達公子", ["Kimiko", "Date", "Krumm"]));
 
 var __REPLACE_WITH_ACTING_PLAYERS__ = "__REPLACE_WITH_ACTING_PLAYERS__";
 
@@ -193,7 +198,7 @@ function processEmbedTweet(){
 
   var outputHtmlTextArea = document.createElement("textarea");
   outputHtmlTextArea.setAttribute("id", "outputHtmlTextArea");
-  outputHtmlTextArea.style.height="200px";
+  outputHtmlTextArea.style.height="100px";
   outputHtmlTextArea.rows="30";
   parentOfTextarea.appendChild(outputHtmlTextArea);
 
@@ -219,11 +224,12 @@ function openEmbedTweetDialog(){
   document.querySelector(".embed-link.js-actionEmbedTweet").click();
 }
 
-chrome.runtime.onMessage.addListener(
-  function(request, sender, sendResponse) {
-    if (request.tweet2blog == "tweet2blog")
-      openEmbedTweetDialog();
-      waitUntilEmbedTweetTextShowsUp(processEmbedTweet);
-      sendResponse({executionStatus: "ok"});
-});
+// chrome.runtime.onMessage.addListener(
+  // function(request, sender, sendResponse) {
+    // if (request.tweet2blog == "tweet2blog")
+      // sendResponse({executionStatus: "ok"});
+// });
+
+openEmbedTweetDialog();
+waitUntilEmbedTweetTextShowsUp(processEmbedTweet);
 

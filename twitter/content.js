@@ -38,6 +38,8 @@ playerManager.add(new Player("GarbiMuguruza", "ガルビネ・ムグルザ", ["G
 playerManager.add(new Player("Simona_Halep", "シモーナ・ハレプ", ["Simona", "Halep"]));
 playerManager.add(new Player("juliagoerges", "ジュリア・ゴージェス", ["julia", "goerges"]));
 playerManager.add(new Player("xxxx", "クルム伊達公子", ["Kimiko", "Date", "Krumm"]));
+playerManager.add(new Player("cilic_marin", "マリン・チリッチ", ["cilic", "marin"]));
+playerManager.add(new Player("mhingis", "マルチナ・ヒンギス", ["martina", "hingis"]));
 
 var __REPLACE_WITH_ACTING_PLAYERS__ = "__REPLACE_WITH_ACTING_PLAYERS__";
 

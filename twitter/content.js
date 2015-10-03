@@ -40,6 +40,9 @@ playerManager.add(new Player("juliagoerges", "ジュリア・ゴージェス", [
 playerManager.add(new Player("xxxx", "クルム伊達公子", ["Kimiko", "Date", "Krumm"]));
 playerManager.add(new Player("cilic_marin", "マリン・チリッチ", ["cilic", "marin"]));
 playerManager.add(new Player("mhingis", "マルチナ・ヒンギス", ["martina", "hingis"]));
+playerManager.add(new Player("ChristinaMcHale", "クリスティナ・マクヘール", ["Christina", "McHale"]));
+playerManager.add(new Player("Bryanbros", "ボブ・ブライアン", ["Bob", "Bryan"]));
+playerManager.add(new Player("GrigorDimitrov", "グリゴール・ディミトロフ", ["Grigor", "Dimitrov"]));
 
 var __REPLACE_WITH_ACTING_PLAYERS__ = "__REPLACE_WITH_ACTING_PLAYERS__";
 

@@ -43,6 +43,9 @@ playerManager.add(new Player("mhingis", "マルチナ・ヒンギス", ["martina
 playerManager.add(new Player("ChristinaMcHale", "クリスティナ・マクヘール", ["Christina", "McHale"]));
 playerManager.add(new Player("Bryanbros", "ボブ・ブライアン", ["Bob", "Bryan"]));
 playerManager.add(new Player("GrigorDimitrov", "グリゴール・ディミトロフ", ["Grigor", "Dimitrov"]));
+playerManager.add(new Player("GillesSimon84", "ジル・シモン", ["Gilles", "Simon"]));
+playerManager.add(new Player("nmahut", "ニコラス・マフー", ["Nicolas", "Mahut"]));
+playerManager.add(new Player("xxxxx", "ボルナ・コリッチ", ["Borna", "Coric"]));
 
 var __REPLACE_WITH_ACTING_PLAYERS__ = "__REPLACE_WITH_ACTING_PLAYERS__";
 

@@ -48,6 +48,11 @@ playerManager.add(new Player("nmahut", "ニコラス・マフー", ["Nicolas", "
 playerManager.add(new Player("xxxxx", "ボルナ・コリッチ", ["Borna", "Coric"]));
 playerManager.add(new Player("MirzaSania", "サニア・ミルザ", ["Sania", "Mirza"]));
 playerManager.add(new Player("HeatherWatson92", "ヘザー・ワトソン", ["Heather", "Watson"]));
+playerManager.add(new Player("xxxx", "ブノア・ペア", ["Benoit", "Paire"]));
+playerManager.add(new Player("LaurenDavis93", "ローレン・デイビス", ["Lauren", "Davis"]));
+playerManager.add(new Player("keinishikori", "錦織圭", ["kei", "nishikori"]));
+playerManager.add(new Player("andyroddick", "アンディ・ロディック", ["andy", "roddick"]));
+playerManager.add(new Player("MardyFish", "マーディー・フィッシュ", ["Mardy", "Fish"]));
 
 var __REPLACE_WITH_ACTING_PLAYERS__ = "__REPLACE_WITH_ACTING_PLAYERS__";
 

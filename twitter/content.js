@@ -53,6 +53,8 @@ playerManager.add(new Player("LaurenDavis93", "ローレン・デイビス", ["L
 playerManager.add(new Player("keinishikori", "錦織圭", ["kei", "nishikori"]));
 playerManager.add(new Player("andyroddick", "アンディ・ロディック", ["andy", "roddick"]));
 playerManager.add(new Player("MardyFish", "マーディー・フィッシュ", ["Mardy", "Fish"]));
+playerManager.add(new Player("xxxx", "ゲイル・モンフィルズ", ["Monfils", "Gael"]));
+playerManager.add(new Player("Petra_Kvitova", "ペトラ・クビトバ", ["Petra", "Kvitova"]));
 
 var __REPLACE_WITH_ACTING_PLAYERS__ = "__REPLACE_WITH_ACTING_PLAYERS__";
 

@@ -12,7 +12,6 @@ playerManager.add(new Player("xxx_nadal", "ラファエル・ナダル", ["Rafae
 playerManager.add(new Player("AndreAgassi", "アンドレ・アガシ", ["Andre", "Agassi"]));
 playerManager.add(new Player("CaroWozniacki", "キャロライン・ウォズニアッキ", ["Caroline", "Wozniacki"]));
 playerManager.add(new Player("AnaIvanovic", "アナ・イバノビッチ", ["Ana", "Ivanovic"]));
-playerManager.add(new Player("AnaIvanovic", "アナ・イバノビッチ", ["Ana", "Ivanovic"]));
 playerManager.add(new Player("andy_murray", "アンディ・マレー", ["Andy", "Murray"]));
 playerManager.add(new Player("JohnIsner", "ジョン・イズナー", ["John", "Isner"]));
 playerManager.add(new Player("MonicaAce93", "モニカ・プイグ", ["Monica", "Puig"]));
@@ -55,6 +54,7 @@ playerManager.add(new Player("andyroddick", "アンディ・ロディック", ["
 playerManager.add(new Player("MardyFish", "マーディー・フィッシュ", ["Mardy", "Fish"]));
 playerManager.add(new Player("xxxx", "ゲイル・モンフィルズ", ["Monfils", "Gael"]));
 playerManager.add(new Player("Petra_Kvitova", "ペトラ・クビトバ", ["Petra", "Kvitova"]));
+playerManager.add(new Player("vika7", "ビクトリア・アザレンカ", ["victoria", "azarenka"]));
 
 var __REPLACE_WITH_ACTING_PLAYERS__ = "__REPLACE_WITH_ACTING_PLAYERS__";
 

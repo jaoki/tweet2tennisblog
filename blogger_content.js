@@ -1,11 +1,13 @@
-CSS_SELECTOR_LABELS_TEXTAREA = "[aria-label='Enter a list of labels separated by comma.']";
+var CSS_SELECTOR_LABELS_TEXTAREA = "[aria-label='Enter a list of labels separated by comma.']";
+var CSS_SELECTOR_LABELS = "a.PXLWASD-Rb-a"
+var CSS_SELECTOR_PERMALINK = "a.PXLWASD-Rb-a"
 
 function closeTextarea(e) {
   var key = e.keyCode;
 
   if (e.ctrlKey && e.keyCode == 13) { // enter
     document.querySelector(".optionHolder").querySelector("button.blogg-button").click();
-    document.querySelectorAll("a.PXLWASD-Qb-a")[2].click(); // open Permalink
+    document.querySelectorAll(CSS_SELECTOR_PERMALINK)[2].click(); // open Permalink
     document.querySelector("#custom-filename").click(); // select Custom Permalink
     document.querySelectorAll(".PXLWASD-Zb-b.textInput")[0].focus(); // focus .html text box
   }
@@ -15,7 +17,7 @@ function openLabels(e){
   var key = e.keyCode;
 
   if (e.ctrlKey && e.keyCode == 76) { // l
-    document.querySelector("a.PXLWASD-Qb-a").click();
+    document.querySelector(CSS_SELECTOR_LABELS).click();
     event.preventDefault(); 
   }
 

@@ -2,7 +2,7 @@
 
 playerManager = new PlayerManager();
 
-playerManager.add(new Player("MariaSharapova", "マリア・シャラポワ", []));
+playerManager.add(new Player("MariaSharapova", "マリア・シャラポワ", ["Maria", "Sharapova"]));
 playerManager.add(new Player("lleytonhewitt", "レイトン・ヒューイット", []));
 playerManager.add(new Player("NickKyrgios", "ニック・キリオス", ["Nick", "Kyrgios"]));
 playerManager.add(new Player("usopen", "USオープン", []));

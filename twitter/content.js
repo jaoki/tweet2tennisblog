@@ -56,6 +56,7 @@ playerManager.add(new Player("xxxx", "ゲイル・モンフィルズ", ["Monfils
 playerManager.add(new Player("Petra_Kvitova", "ペトラ・クビトバ", ["Petra", "Kvitova"]));
 playerManager.add(new Player("vika7", "ビクトリア・アザレンカ", ["victoria", "azarenka"]));
 playerManager.add(new Player("SloaneStephens", "スローン・スティーブンス", ["Sloane", "Stephens"]));
+playerManager.add(new Player("Cibulkova", "ドミニカ・チブルコバ", ["Dominika", "Cibulkova"]));
 
 var __REPLACE_WITH_ACTING_PLAYERS__ = "__REPLACE_WITH_ACTING_PLAYERS__";
 

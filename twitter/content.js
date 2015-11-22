@@ -57,6 +57,7 @@ playerManager.add(new Player("Petra_Kvitova", "ペトラ・クビトバ", ["Petr
 playerManager.add(new Player("vika7", "ビクトリア・アザレンカ", ["victoria", "azarenka"]));
 playerManager.add(new Player("SloaneStephens", "スローン・スティーブンス", ["Sloane", "Stephens"]));
 playerManager.add(new Player("Cibulkova", "ドミニカ・チブルコバ", ["Dominika", "Cibulkova"]));
+playerManager.add(new Player("stanwawrinka", "スタニスラス・ワウリンカ", ["Stanislas", "stan", "wawrinka"]));
 
 var __REPLACE_WITH_ACTING_PLAYERS__ = "__REPLACE_WITH_ACTING_PLAYERS__";
 

@@ -58,7 +58,9 @@ playerManager.add(new Player("vika7", "ビクトリア・アザレンカ", ["vic
 playerManager.add(new Player("SloaneStephens", "スローン・スティーブンス", ["Sloane", "Stephens"]));
 playerManager.add(new Player("Cibulkova", "ドミニカ・チブルコバ", ["Dominika", "Cibulkova"]));
 playerManager.add(new Player("stanwawrinka", "スタニスラス・ワウリンカ", ["Stanislas", "stan", "wawrinka"]));
-playerManager.add(new Player("BMATTEK", "ベサニー・マテックサンズ", ["Bethanie", " Mattek", "Sands"]));
+playerManager.add(new Player("BMATTEK", "ベサニー・マテックサンズ", ["Bethanie", "Mattek", "Sands"]));
+playerManager.add(new Player("DonnaVekic", "ドナ・べキッチ", ["Donna", "Vekic"]));
+playerManager.add(new Player("milosraonic", "ミロシュ・ラオニッチ", ["milos", "raonic"]));
 
 var __REPLACE_WITH_ACTING_PLAYERS__ = "__REPLACE_WITH_ACTING_PLAYERS__";
 

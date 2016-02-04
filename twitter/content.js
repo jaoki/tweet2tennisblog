@@ -61,6 +61,7 @@ playerManager.add(new Player("stanwawrinka", "スタニスラス・ワウリン�
 playerManager.add(new Player("BMATTEK", "ベサニー・マテックサンズ", ["Bethanie", "Mattek", "Sands"]));
 playerManager.add(new Player("DonnaVekic", "ドナ・べキッチ", ["Donna", "Vekic"]));
 playerManager.add(new Player("milosraonic", "ミロシュ・ラオニッチ", ["milos", "raonic"]));
+playerManager.add(new Player("tennis_jarkag", "ジャーミラ・ウルフ", ["Jarmila", "Wolfe"]));
 
 var __REPLACE_WITH_ACTING_PLAYERS__ = "__REPLACE_WITH_ACTING_PLAYERS__";
 

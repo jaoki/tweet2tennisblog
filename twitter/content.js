@@ -66,6 +66,10 @@ playerManager.add(new Player("CarolZhao95", "キャロル・ザオ", ["carol", "
 playerManager.add(new Player("DreddyTennis", "ダスティン・ブラウン", ["dustin", "brown"]));
 playerManager.add(new Player("ryanharrison92", "ライアン・ハリソン", ["ryan", "harrison"]));
 playerManager.add(new Player("xxxxxxx", "バーナード・トミック", ["Bernard", "Tomic"]));
+playerManager.add(new Player("borna_coric", "ボルナ・チョリッチ", ["borna", "coric"]));
+playerManager.add(new Player("tsonga7", "ジョー＝ウィルフリード・ツォンガ", ["Jo-Wilfried", "Tsonga"]));
+playerManager.add(new Player("delpotrojuan", "フアン・マルティン・デル・ポトロ", ["delpotro"]));
+playerManager.add(new Player("KaPliskova", "カロリナ・プリスコバ", ["Karolina", "Pliskova"]));
 
 var __REPLACE_WITH_ACTING_PLAYERS__ = "__REPLACE_WITH_ACTING_PLAYERS__";
 

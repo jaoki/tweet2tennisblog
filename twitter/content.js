@@ -70,6 +70,8 @@ playerManager.add(new Player("borna_coric", "ボルナ・チョリッチ", ["bor
 playerManager.add(new Player("tsonga7", "ジョー＝ウィルフリード・ツォンガ", ["Jo-Wilfried", "Tsonga"]));
 playerManager.add(new Player("delpotrojuan", "フアン・マルティン・デル・ポトロ", ["delpotro"]));
 playerManager.add(new Player("KaPliskova", "カロリナ・プリスコバ", ["Karolina", "Pliskova"]));
+playerManager.add(new Player("AngeliqueKerber", "アンゲリク・ケルバー", ["Angelique", "Kerber"]));
+playerManager.add(new Player("dhantuchova", "ダニエラ・ハンチュコバ", ["Daniela", "Hantuchova"]));
 
 var __REPLACE_WITH_ACTING_PLAYERS__ = "__REPLACE_WITH_ACTING_PLAYERS__";
 

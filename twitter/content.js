@@ -75,7 +75,10 @@ playerManager.add(new Player("dhantuchova", "ダニエラ・ハンチュコバ",
 playerManager.add(new Player("laraarrua", "ララ・アロアバレーナ", ["LARA", "ARRUABARRENA"]));
 playerManager.add(new Player("ThiemDomi", "ドミニク・ティエム", ["Dominic", "Thiem"]));
 playerManager.add(new Player("tomasberdych", "トマーシュ・ベルディハ", ["tomas", "berdych"]));
-playerManager.add(new Player("kevinanderson18", "ケビン・アンダーソン", ["kevin", "anderson"]));
+playerManager.add(new Player("SvetlanaK27", "スベトラーナ・クズネツォワ", ["Svetlana", "Kuznetsova"]));
+playerManager.add(new Player("andreapetkovic", "アンドレア・ペトコビッチ", ["Andrea", "Petkovic"]));
+playerManager.add(new Player("AlizeLim", "アリゼ・リム", ["Alize", "Alizé", "Lim"]));
+playerManager.add(new Player("xxxxx", "ジョン・マッケンロー", ["John", "McEnroe"]));
 
 var __REPLACE_WITH_ACTING_PLAYERS__ = "__REPLACE_WITH_ACTING_PLAYERS__";
 

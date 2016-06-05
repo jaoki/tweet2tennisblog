@@ -79,6 +79,8 @@ playerManager.add(new Player("SvetlanaK27", "スベトラーナ・クズネツ�
 playerManager.add(new Player("andreapetkovic", "アンドレア・ペトコビッチ", ["Andrea", "Petkovic"]));
 playerManager.add(new Player("AlizeLim", "アリゼ・リム", ["Alize", "Alizé", "Lim"]));
 playerManager.add(new Player("xxxxx", "ジョン・マッケンロー", ["John", "McEnroe"]));
+playerManager.add(new Player("xxxxx", "カミラ・ジョルジ", ["Camila", "Giorgi"]));
+playerManager.add(new Player("A_Pivovarova", "アナスタシア・ピヴォヴァロヴァ", ["anastasia", "pivovarova"]));
 
 var __REPLACE_WITH_ACTING_PLAYERS__ = "__REPLACE_WITH_ACTING_PLAYERS__";
 

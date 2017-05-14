@@ -84,6 +84,11 @@ playerManager.add(new Player("A_Pivovarova", "アナスタシア・ピヴォヴ�
 playerManager.add(new Player("Gibbsyyyy", "ニコール・ギブス", ["Nicole", "Gibbs"]));
 playerManager.add(new Player("VasekPospisil", "バセク・ポシュピシル", ["Vasek", "Pospisil"]));
 playerManager.add(new Player("ivokarlovic", "イボ・カルロビッチ", ["ivo", "karlovic"]));
+playerManager.add(new Player("NickBollettieri", "ニック・ボロテリー", ["Nick", "Bollettieri"]));
+playerManager.add(new Player("darren_cahill", "ダレン・ケーヒル", ["darren", "cahill"]));
+playerManager.add(new Player("Clijsterskim", "キム・クライシュテルス", ["kim", "Clijsters"]));
+playerManager.add(new Player("Naomi_Osaka_", "大阪なおみ", ["Naomi", "Osaka"]));
+playerManager.add(new Player("anakonjuh", "アナ・コニュ", ["Ana", "Konjuh"]));
 
 var __REPLACE_WITH_ACTING_PLAYERS__ = "__REPLACE_WITH_ACTING_PLAYERS__";
 

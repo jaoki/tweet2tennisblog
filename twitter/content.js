@@ -89,6 +89,7 @@ playerManager.add(new Player("darren_cahill", "ダレン・ケーヒル", ["darr
 playerManager.add(new Player("Clijsterskim", "キム・クライシュテルス", ["kim", "Clijsters"]));
 playerManager.add(new Player("Naomi_Osaka_", "大阪なおみ", ["Naomi", "Osaka"]));
 playerManager.add(new Player("anakonjuh", "アナ・コニュ", ["Ana", "Konjuh"]));
+playerManager.add(new Player("YungJan_Chan", "チャン・ユンジャン", ["Yungjan", "Chan"]));
 
 var __REPLACE_WITH_ACTING_PLAYERS__ = "__REPLACE_WITH_ACTING_PLAYERS__";
 
